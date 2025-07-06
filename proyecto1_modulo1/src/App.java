@@ -22,13 +22,13 @@ public class App {
 
                 switch (opcion) {
                     case 1:
-                        confirmarYRegistrarEstudiante(keyboard);
+                        RegistroEstudiante(keyboard);
                         break;
                     case 2:
-                        mostrarInfoEstudiante();
+                        InfoEstudiante();
                         break;
                     case 3:
-                        mostrarPromedioYEstado();
+                        PromedioEstaduiante();
                         break;                
                     case 4:
                         limpiarDatos();
@@ -60,7 +60,7 @@ public class App {
         System.out.println("0. Salir");
     }
 
-    private static void confirmarYRegistrarEstudiante(Scanner keyboard) {
+    private static void RegistroEstudiante(Scanner keyboard) {
         if (!nombreEstudiante.equals("N/A")) {
             System.out.print("Ya hay un estudiante registrado. ¿Deseas sobrescribirlo? (s/n): ");
             String respuesta = keyboard.nextLine().strip().toLowerCase();
@@ -149,7 +149,7 @@ public class App {
         System.out.println("Estudiante registrado correctamente.");
     }
 
-    private static void mostrarInfoEstudiante() {
+    private static void InfoEstudiante() {
         if (nombreEstudiante.equals("N/A")) {
             System.out.println("No hay estudiante registrado.");
         } else {
@@ -161,7 +161,7 @@ public class App {
         }
     }
 
-    private static void mostrarPromedioYEstado() {
+    private static void PromedioEstaduiante() {
         if (nombreEstudiante.equals("N/A")) {
             System.out.println("No hay estudiante registrado.");
             return;
