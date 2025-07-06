@@ -12,8 +12,9 @@ public class App {
         Scanner keyboard = new Scanner(System.in);
         int opcion = -1;
         System.out.println("Bienvenidos estudiantes. Hellou\n");
-            while (opcion != 0) {
-                try {
+
+        while (opcion != 0) {
+            try {
                 mostrarMenu();
                 System.out.print("Ingrese su opción: ");
                 opcion = keyboard.nextInt();
@@ -29,6 +30,9 @@ public class App {
                     case 3:
                         mostrarPromedioYEstado();
                         break;                
+                    case 4:
+                        limpiarDatos();
+                        break;
                     case 0:
                         System.out.println("Hasta luego.");
                         break;
@@ -36,13 +40,15 @@ public class App {
                         System.out.println("Opción no válida.");
                         break;
                 }
-             } catch (InputMismatchException error) {
+            } catch (InputMismatchException error) {
                 System.out.println("Error: Debe ingresar un número.");
-                keyboard.nextLine();
+                keyboard.nextLine(); // limpiar entrada inválida
             }
+
             System.out.println(); // Espacio visual
         }
-             keyboard.close();
+
+        keyboard.close();
     }
 
     private static void mostrarMenu() {
@@ -164,9 +170,19 @@ public class App {
         double promedio = calcularPromedioEstudiante();
         System.out.printf("Promedio: %.2f\n", promedio);
 
-        String estado = promedio >= 60 ? "APROBADO" : "REPROBADO";
-        System.out.printf("El estado del estudiante es: %s", estado);
+        if (promedio >= 60) {
+            System.out.println("Estado: Aprobado");
+        } else {
+            System.out.println("Estado: Reprobado");
+        }
+    }
 
+    private static void limpiarDatos() {
+        nombreEstudiante = "N/A";
+        nota1 = 0;
+        nota2 = 0;
+        nota3 = 0;
+        System.out.println("Datos del estudiante eliminados.");
     }
 
     private static double calcularPromedioEstudiante() {
