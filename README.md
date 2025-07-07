@@ -26,27 +26,29 @@ Validaciones para evitar errores al escribir.
 Requisitos:
 Tener instalado Java 21 o superior.
 
-Usar un IDE (IntelliJ, VSCode, Eclipse) o la terminal/consola.
-
-Instrucciones:
-Clona el repositorio:
-
-bash
-Copiar
-Editar
-git clone https://github.com/Liu-Mark23/Proyecto_1_mod1_DevSenior.git
-Abre el proyecto en tu IDE o terminal.
-
-Ejecuta el archivo App.java.
 
 🔧 Tecnologías utilizadas
 Java 21
 
-Programación estructurada (métodos)
+⚙️ Metodologías utilizadas
+🔹 Programación estructurada
+El proyecto está organizado en métodos que cumplen funciones específicas como mostrar el menú, registrar datos, calcular el promedio, etc. Esto mejora la legibilidad y reutilización del código.
 
-Consola/Terminal
+🔹 Validación de entradas
+Se valida que el usuario ingrese datos correctos (por ejemplo, que las notas estén entre 0 y 100, o que el nombre no esté vacío).
 
-Manejo de errores con try-catch
+🔹 Manejo de errores con try-catch
+Se usa try-catch para manejar errores de tipo InputMismatchException, evitando que el programa se cierre si el usuario escribe un dato incorrecto.
+
+🔹 Bucles while para control de flujo
+Se emplean bucles para permitir la repetición de acciones como registrar notas hasta que se ingrese un valor válido o salir del sistema.
+
+🔹 Confirmaciones antes de sobrescribir o borrar datos
+El sistema pregunta antes de reemplazar información ya registrada, para evitar cambios accidentales.
+
+🔹 Separación por responsabilidades (cohesión)
+Cada método realiza una única tarea bien definida, aplicando buenas prácticas de modularidad.
+
 
 👨‍💻 Autor
 Proyecto creado por Marco Moreno Buendía como parte de su formación con Dev Senior.
